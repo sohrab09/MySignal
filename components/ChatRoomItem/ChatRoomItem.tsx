@@ -8,7 +8,6 @@ type ChatRoomItemProps = {
 
 const ChatRoomItem = ({ chatRoom }: ChatRoomItemProps) => {
   const user = chatRoom.users[1];
-  console.log("🚀 ~ file: ChatRoomItem.tsx:12 ~ ChatRoomItem ~ user", user);
 
   return (
     <View style={styles.container}>
@@ -28,10 +27,10 @@ const ChatRoomItem = ({ chatRoom }: ChatRoomItemProps) => {
           <Text numberOfLines={1} style={styles.name}>
             {user.name}
           </Text>
-          {/* <Text style={styles.time}>{user.lastMessage.createdAt}</Text> */}
+          <Text style={styles.time}>{chatRoom.lastMessage.createdAt}</Text>
         </View>
         <Text numberOfLines={1} style={styles.message}>
-          {/* {user.lastMessage.content} */}
+          {chatRoom.lastMessage.content}
         </Text>
       </View>
     </View>
